@@ -15,3 +15,10 @@ VALUES ('Gómez', 'Juan', '1985-06-15', 'Pereira, Risaralda'),
 			 ('Aguirre', 'Julio', '1973-10-11', 'Cali, Valle del Cauca'),
 			 ('Ortiz', 'Mario', '1989-12-06', 'Bogotá, Cundinamarca');
 		
+INSERT INTO infracciones (articulo_infringido, fecha_infraccion) 
+VALUES ('Exceso de velocidad', '2024-11-01'),
+			 ('Semaáforo en rojo', '2024-06-10'),
+			 ('Parquea en andén', '2024-10-03'),
+			 ('Estado de alicoramiento', '2024-12-24'),
+			 ('kit de seguridad', '2024-01-06');
+			 
