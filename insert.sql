@@ -50,5 +50,13 @@ VALUES ('Carlos Martínez', 1),
 			 ('Carlos Martínez', 3),
 			 ('Viviana Garzón', 4),
 			 ('Laura Sánchez', 5);
-			
+
+-- TABLA MULTIPLE RELACIÓN
+INSERT INTO multas (numero_matricula,lugar_infraccion,NIT,expediente_unico, importe_multa,fecha_multa) 
+VALUES (1, 1, 1, 1, 550,000.00, '2024-11-01'),
+			 (2, 2, 2, 2, 750,000.00, '2024-06-10'),
+			 (3, 3, 3, 3, 350,000.00, '2024-10-03'),
+			 (4, 4, 4, 4, 500,000.00, '2024-12-24'),
+			 (5, 5, 5, 5, 450,000.00, '2024-01-06');
+			 
 			
