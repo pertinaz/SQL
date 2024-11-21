@@ -28,4 +28,12 @@ VALUES (101, 23, 'Av. Principal 332'),
 			 (134, 02, 'Municipal Horiente 322'),
 			 (80, 21, 'Parque central 112'),
 			 (101, 03, 'Alamos sur 202');
-			 
+
+-- TABLAS DEPENDIENTES
+INSERT INTO modelos (nombre_modelo,potencia_vehiculo,marca_ID) 
+VALUES ('Corolla', 150, 1),
+			 ('Civic', 180, 2),
+			 ('Rio', 200, 3),
+			 ('Caminos', 150, 4),
+			 ('G21 Serie 3', 250, 5);
+			
