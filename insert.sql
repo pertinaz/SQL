@@ -43,5 +43,12 @@ VALUES (1, 1, '2024-01-06'),
 			 (3, 3, '2024-06-18'),
 			 (4, 4, '2024-08-10'),
 			 (5, 5, '2024-11-15');
-			 
+
+INSERT INTO agentes_transito (nombre_agente, expediente_unico) 
+VALUES ('Carlos Martínez', 1),
+			 ('Viviana Garzón', 2),
+			 ('Carlos Martínez', 3),
+			 ('Viviana Garzón', 4),
+			 ('Laura Sánchez', 5);
+			
 			
