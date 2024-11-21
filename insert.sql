@@ -36,4 +36,12 @@ VALUES ('Corolla', 150, 1),
 			 ('Rio', 200, 3),
 			 ('Caminos', 150, 4),
 			 ('G21 Serie 3', 250, 5);
+
+INSERT INTO vehiculos (modelo_ID,NIT,fecha_matriculacion) 
+VALUES (1, 1, '2024-01-06'),
+			 (2, 2, '2024-03-30'),
+			 (3, 3, '2024-06-18'),
+			 (4, 4, '2024-08-10'),
+			 (5, 5, '2024-11-15');
+			 
 			
