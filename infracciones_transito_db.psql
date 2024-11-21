@@ -1,0 +1,69 @@
+-- CREACIÓN DE TABLAS
+
+-- TABLAS BASE 
+CREATE TABLE IF NOT EXISTS marcas (
+    marca_id SERIAL PRIMARY KEY,
+    nombre_marca VARCHAR(30) NOT NULL,
+    direccion_concesionario VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS propietarios (
+    nit SERIAL PRIMARY KEY,
+    apellidos VARCHAR(30) NOT NULL,
+    nombres VARCHAR(30) NOT NULL,
+    nacimiento DATE NOT NULL,
+    domicilio VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS infracciones (
+    expediente_unico SERIAL PRIMARY KEY,
+    articulo_infringido VARCHAR(30) NOT NULL,
+    fecha_infraccion DATE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS direccion_infraccion (
+    lugar_infraccion SERIAL PRIMARY KEY,
+    carretera INT NOT NULL,
+    kilometro INT NOT NULL,
+    direccion VARCHAR(30) NOT NULL
+);
+
+-- TABLAS DEPENDIENTES
+CREATE TABLE IF NOT EXISTS modelos (
+    modelo_id SERIAL PRIMARY KEY,
+    nombre_modelo VARCHAR(30) NOT NULL,
+    potencia_vehiculo INT NOT NULL,
+    marca_id INT NOT NULL,
+    FOREIGN KEY (marca_id) REFERENCES marcas(marca_id)
+);
+
+CREATE TABLE IF NOT EXISTS vehiculos (
+    numero_matricula SERIAL PRIMARY KEY,
+    modelo_id INT NOT NULL,
+    nit INT NOT NULL,
+    fecha_matriculacion DATE NOT NULL,
+    FOREIGN KEY (nit) REFERENCES propietarios(nit),
+    FOREIGN KEY (modelo_id) REFERENCES modelos(modelo_id)
+);
+
+CREATE TABLE IF NOT EXISTS agentes_transito (
+    identificacion_agente SERIAL PRIMARY KEY,
+    nombre_agente VARCHAR(30) NOT NULL,
+    expediente_unico INT NOT NULL,
+    FOREIGN KEY (expediente_unico) REFERENCES infracciones(expediente_unico)
+);
+
+-- TABLA MULTIPLE RELACIÓN
+CREATE TABLE IF NOT EXISTS multas (
+    multa_id SERIAL PRIMARY KEY,
+    numero_matricula INT NOT NULL,
+    lugar_infraccion INT NOT NULL,
+    nit INT NOT NULL,
+    expediente_unico INT NOT NULL,
+    importe_multa NUMERIC(10, 2) NOT NULL,
+    fecha_multa DATE NOT NULL,
+    FOREIGN KEY (numero_matricula) REFERENCES vehiculos(numero_matricula),
+    FOREIGN KEY (lugar_infraccion) REFERENCES direccion_infraccion(lugar_infraccion),
+    FOREIGN KEY (nit) REFERENCES propietarios(nit),
+    FOREIGN KEY (expediente_unico) REFERENCES infracciones(expediente_unico)
+);
