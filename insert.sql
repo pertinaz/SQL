@@ -21,4 +21,11 @@ VALUES ('Exceso de velocidad', '2024-11-01'),
 			 ('Parquea en andén', '2024-10-03'),
 			 ('Estado de alicoramiento', '2024-12-24'),
 			 ('kit de seguridad', '2024-01-06');
+
+INSERT INTO direccion_infracciones (carretera,kilometro,direccion) 
+VALUES (101, 23, 'Av. Principal 332'),
+			 (12, 100, 'Calle Estrella 221'),
+			 (134, 02, 'Municipal Horiente 322'),
+			 (80, 21, 'Parque central 112'),
+			 (101, 03, 'Alamos sur 202');
 			 
