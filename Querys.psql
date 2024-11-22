@@ -1,0 +1,92 @@
+-- Nuevo propietario
+INSERT INTO propietarios (apellidos, nombres, nacimiento, domicilio) 
+VALUES ('López', 'María', '1990-09-10', 'Bucaramanga, Santander');
+
+-- Nueva marca 
+INSERT INTO marcas (nombre_marca, direccion_concesionario) 
+VALUES ('Ford', 'Carrera 45 #20-18');
+
+-- Actualizar dirección concesionario
+UPDATE marcas
+SET direccion_concesionario = 'Avenida Las Américas 55'
+WHERE nombre_marca = 'Toyota';
+
+-- Cambiar nombre modelo
+UPDATE modelos
+SET nombre_modelos = 'Corolla Hybrid'
+WHERE modelo_id = 1;
+
+-- Eliminar propietario
+DELETE FROM propietarios
+WHERE apellidos = 'Ortiz' AND nombres = 'Mario';
+
+-- Eliminar infracción
+DELETE FROM infracciones
+WHERE articulo_infringido = 'Parquea en andén';
+
+-- Ver todos los vehiculos
+SELECT * FROM vehiculos;
+
+-- Ver vehiculos de una sola marca
+SELECT v.numero_matricula, v.fecha_matriculacion, m.nombre_modelo
+FROM vehiculos v
+JOIN modelos m ON v.modelo_id = modelo.id
+WHERE m.marca_id = 1;
+
+-- Ver multas con un importe dentro de un rango
+SELECT *
+FROM multas
+WHERE importe_multa > 500000;
+
+-- Ver agentes y las infracciones que realizacion
+SELECT a.nombre_agente, i.articulo_infringido, i.fecha_infraccion
+FROM agentes_transito a
+JOIN infracciones i ON a.expediente_unico = i.expediente_unico;
+
+-- Ver modelos y sus marcas correspondientes
+SELECT m.nombre_modelo, c.nombre_marca
+FROM modelos m
+JOIN marcas c ON m.marca_id = c.marca_id;
+
+-- Ver nombres completos de propietarios
+SELECT p.apellidos AS "Apellido", p.nombres AS "Nombre completo"
+FROM propietarios p;
+
+-- Ver marcas y direcciones de concesioanrios
+SELECT m.nombre_marca AS "Marca", m.direccion_concesionario AS "Ubicacion concesionario"
+FROM marcas m;
+
+-- Ver multas y detalles del vehiculo asociado
+SELECT mt.multa_idm mt.importe_multa, vh.numero_matricula, mo.nombre_modelo
+FROM multas mt
+JOIN vehiculos vh ON mt.numero_matricula = vh.numero_matricula
+JOIN modelos mo ON vh.modelo_id = mo.modelo_id;
+
+-- Ver agentes con más de una infracción realizada
+SELECT nombre_agente, COUNT(expediente_unico) AS total_infracciones
+FROM agentes_transito
+GROUP BY nombre_agente
+HAVING COUNT(expediente_unico) > 1;
+
+-- Ver direccion y detalles de las infracciones
+SELECT d.lugar_infraccion, d.direccion, i.articulo_infringido
+FROM direccion_infraccion d
+JOIN infracciones i ON d.lugar_infraccion = i.expediente_unico;
+
+-- Buscar propietarios nacidos después del año 1990
+SELECT nombre, apellidos, nacimiento
+FROM propietarios
+WHERE ancimiento > '1990-01-01';
+
+-- Ver todos los modelos y su potencia
+SELECT nombre_modelo, potencia_vehiculo
+FROM modelos;
+
+-- Modificar potencia de un modelo
+UPDATE modelos
+SET potencia_vehiculo = 220
+WHERE nombre_completo = 'Civic';
+
+-- Eliminar modelo de una marca eliminada
+DELETE FROM modelos
+WHERE marca_id = (SELECT marca_id FROM marcas WHERE nombre_marca = 'Chevrolet');
