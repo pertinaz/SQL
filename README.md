@@ -1,6 +1,9 @@
-BASES DE DATOS I 2024-02
-PROYECTO FINAL
-JUAN MANUEL AGUDELO
+## BASES DE DATOS I 2024-02
+
+## PROYECTO FINAL
+
+## JUAN MANUEL AGUDELO
+
 ---
 
 La Secretaria de Trafico, desea mantener cierta información del parque de vehículos nacional con el fin de realizar una adecuada gestión de las infracciones de tráfico que se comenten.
