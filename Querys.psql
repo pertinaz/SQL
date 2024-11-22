@@ -16,13 +16,18 @@ UPDATE modelos
 SET nombre_modelos = 'Corolla Hybrid'
 WHERE modelo_id = 1;
 
+-- Eliminar multa
+DELETE FROM multas
+WHERE multa_id = 20;
+
+-- Eliminar vehiculo
+DELETE FROM vehiculos
+WHERE nit = 25 AND numero_matricula = 30;
+
 -- Eliminar propietario
 DELETE FROM propietarios
 WHERE apellidos = 'Ortiz' AND nombres = 'Mario';
 
--- Eliminar infracción
-DELETE FROM infracciones
-WHERE articulo_infringido = 'Parquea en andén';
 
 -- Ver todos los vehiculos
 SELECT * FROM vehiculos;
@@ -74,9 +79,9 @@ FROM direccion_infraccion d
 JOIN infracciones i ON d.lugar_infraccion = i.expediente_unico;
 
 -- Buscar propietarios nacidos después del año 1990
-SELECT nombre, apellidos, nacimiento
+SELECT nombres, apellidos, nacimiento
 FROM propietarios
-WHERE ancimiento > '1990-01-01';
+WHERE nacimiento > '1990-01-01';
 
 -- Ver todos los modelos y su potencia
 SELECT nombre_modelo, potencia_vehiculo
@@ -86,7 +91,3 @@ FROM modelos;
 UPDATE modelos
 SET potencia_vehiculo = 220
 WHERE nombre_completo = 'Civic';
-
--- Eliminar modelo de una marca eliminada
-DELETE FROM modelos
-WHERE marca_id = (SELECT marca_id FROM marcas WHERE nombre_marca = 'Chevrolet');
