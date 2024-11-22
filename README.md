@@ -7,3 +7,6 @@ En una primera fase se desea recopilar información acerca de lasmarcas y modelo
 
 ### Esquema modelo relacional
 ![Esquema modelo relacional](https://github.com/user-attachments/assets/a2151626-9063-4bbc-8446-aa3d129b80c7)
+
+## CONSULTAS 
+![consulta01](https://github.com/user-attachments/assets/3b4466d8-1f02-4835-ba18-c7eaaea9d348)
