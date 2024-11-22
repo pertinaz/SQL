@@ -1,5 +1,4 @@
 La Secretaria de Trafico, desea mantener cierta información del parque de vehículos nacional con el fin de realizar una adecuada gestión de las infracciones de tráfico que se comenten.
-En una primera fase se desea recopilar información acerca de lasmarcas y modelos que existen en el mercado, por lo que desde lasdistintas casas de automóviles, se les remite la información necesaria.
 
 ---
 
@@ -15,9 +14,12 @@ A continuación se anexa los gráficos de los esquemas, de allí como se ha agre
 
 ### Esquema modelo relacional
 ![Esquema modelo relacional](https://github.com/user-attachments/assets/a2151626-9063-4bbc-8446-aa3d129b80c7)
+
 ---
+
 ## TABLAS
 ![tablas](https://github.com/user-attachments/assets/ab4b40a7-9b09-4ada-9fdf-220668fd03e4)
+
 ---
 
 ## CONSULTAS 
