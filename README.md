@@ -4,9 +4,13 @@ La Secretaria de Trafico, desea mantener cierta información del parque de vehí
 
 Este proyecto fue realizado haciendo uso del Sistema Gestor de bases de datos open source de PostgreSQL haciendo uso de su interfaz gráfica pgAdmin4, aunque se usa esta interfaz gráfica, toda la información fue agregada por medio de instrucciones SQL usando la opción *Query Tool* dentro de pgAdmin4, la cual nos permite ejecutar las instrucciones y después observar las tablas y los datos que contienen.
 
-A continuación se anexa los gráficos de los esquemas, de allí, como se ha agregado 5 inserciones de datos por cada una de las tablas. (Para ver las inserciones de datos [vea aqui](https://github.com/pertinaz/SQL/blob/main/insert.psql)). 
+A continuación se anexa los gráficos de los esquemas.
 
-Por último, un listado de cada una de las consultas realizadas, en total 20, (Para ver las consultas en SQL [vea aqui](https://github.com/pertinaz/SQL/blob/main/Querys.psql)).
+De allí, al finalizar los esquemas se han construido las tablas en nuestro SGBD las cuales se pueden encontrar como instrucciones SQL [aquí](https://github.com/pertinaz/SQL/blob/main/infracciones_transito_db.psql).
+
+Una vez finalizada la construcción de las tablas, fue necesario agregar 5 inserciones de datos por cada una de las tablas. (Para ver las inserciones de datos [vea aqui](https://github.com/pertinaz/SQL/blob/main/insert.psql)). 
+
+Por último, después de tener nuestros datos iniciales, he realizado unas consultas para verificar el correcto funcionamiento, y se han anexado como un listado de cada una de las consultas realizadas las cuales se ven más abajo en este documento, en total 20, (Para ver las consultas en SQL [vea aqui](https://github.com/pertinaz/SQL/blob/main/Querys.psql)).
 
 ---
 
